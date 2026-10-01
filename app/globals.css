@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Palette taken from the Nepali flag: crimson for the one highlighted result, deep blue for ink. */
+@theme {
+  --color-paper: #f6f7f9;
+  --color-panel: #ffffff;
+  --color-ink: #0e1f45;
+  --color-muted: #55617a;
+  --color-rule: #d5dbe5;
+  --color-bar: #9fb0cc;
+  --color-crimson: #c8102e;
+
+  --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-crimson);
+  color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-crimson);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* The one motion moment: benchmark bars grow in on load. */
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.bar {
+  transform-origin: left center;
+  animation: grow 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .bar {
+    animation: none;
+  }
+}
