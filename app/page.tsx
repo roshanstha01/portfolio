@@ -151,8 +151,25 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 sm:px-8">
-        <a href="#top" className="text-base font-bold tracking-tight">
-          Roshan Shrestha
+        <a href="#top" className="block rounded-lg">
+          <svg viewBox="0 0 40 40" className="h-10 w-10" aria-hidden="true">
+            <rect width="40" height="40" rx="9" className="fill-ink" />
+            <text
+              x="20"
+              y="21"
+              textAnchor="middle"
+              dominantBaseline="central"
+              fontSize="19"
+              fontWeight="800"
+              letterSpacing="-1.2"
+              className="fill-white"
+              style={{ fontFamily: "var(--font-sans)" }}
+            >
+              RS
+            </text>
+            <rect x="12" y="31" width="16" height="2.5" rx="1.25" className="fill-crimson" />
+          </svg>
+          <span className="sr-only">Roshan Shrestha</span>
         </a>
         <nav className="flex items-center gap-5 text-sm text-muted sm:gap-7">
           <a href="#projects" className="hover:text-ink">Projects</a>
@@ -213,7 +230,7 @@ export default function Home() {
             <div className="max-w-[62ch]">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">About</h2>
               <p className="mt-6 text-lg leading-8 text-white/80">
-                I finished my bachelor&rsquo;s in Computer Engineering with a 3.78 GPA. My final year
+                I finished my bachelor&rsquo;s in Computer Engineering. My final year
                 project put election rules into an Ethereum smart contract. Since then I&rsquo;ve been
                 working on machine learning and retrieval: how documents get split and searched, and
                 how to tell whether a model&rsquo;s answers are actually right.
